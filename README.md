@@ -53,40 +53,55 @@ CPU scheduling is a critical component of operating systems where the scheduler 
 
 *First Come First Served (FCFS):*
 
--Processes are executed in the order they arrive.
--Simple but may lead to the "convoy effect" where short processes wait behind long ones.
+- Processes are executed in the order they arrive.
+
+- Simple but may lead to the "convoy effect" where short processes wait behind long ones.
 
 *Shortest Job First (SJF):*
 
--Executes the shortest job first.
--Minimizes average waiting time but requires accurate prediction of burst times.
+- Executes the shortest job first.
+
+- Minimizes average waiting time but requires accurate prediction of burst times.
 
 *Shortest Remaining Time First (SRTF):*
 
--A preemptive version of SJF where the shortest remaining time process is executed.
--Minimizes response time but requires frequent context switching.
+- A preemptive version of SJF where the shortest remaining time process is executed.
+
+- Minimizes response time but requires frequent context switching.
 
 *Round Robin (RR):*
 
--Each process gets a small time slice (time quantum) to execute.
--Ensures fairness but can lead to higher context switching overhead.
+- Each process gets a small time slice (time quantum) to execute.
+
+- Ensures fairness but can lead to higher context switching overhead.
 
 ## Implementation Details
--index.html: Structure of the application and user interface elements.
--style.css: Styling for the application using Bootstrap and custom CSS.
--script.js: Main JavaScript file implementations and event handling logic.
--scheduler.cpp:
+- index.html: Structure of the application and user interface elements.
+
+- style.css: Styling for the application using Bootstrap and custom CSS.
+
+- script.js: Main JavaScript file implementations and event handling logic.
+
+- scheduler.cpp:
  Implementations of FCFS, SJF, SRTF, and RR algorithms respectively.
  Utility functions for common operations such as sorting and calculating metrics.
+ 
 ## Learning Takeaways
--Understanding CPU Scheduling: Gain practical insights into how CPU scheduling algorithms function and their impact on system performance metrics.
--Web Development Skills: Enhance proficiency in HTML, CSS, and JavaScript through interactive application development.
--Algorithm Design: Learn to design and implement scheduling algorithms to optimize system efficiency.
--User Interface Design: Develop skills in creating intuitive user interfaces for simulation and analysis tools.
+
+- Understanding CPU Scheduling: Gain practical insights into how CPU scheduling algorithms function and their impact on system performance metrics.
+
+- Web Development Skills: Enhance proficiency in HTML, CSS, and JavaScript through interactive application development.
+
+- Algorithm Design: Learn to design and implement scheduling algorithms to optimize system efficiency
+
+- User Interface Design: Develop skills in creating intuitive user interfaces for simulation and analysis tools.
+
 ## Resources/References
--GeeksforGeeks CPU Scheduling: Comprehensive tutorials and examples of various CPU scheduling algorithms.
--Operating System Concepts by Silberschatz, Galvin, and Gagne: Fundamental textbook for understanding operating system principles and scheduling algorithms.
--Wikipedia: General information and detailed descriptions of CPU scheduling algorithms
+- GeeksforGeeks CPU Scheduling: Comprehensive tutorials and examples of various CPU scheduling algorithms.
+
+- Operating System Concepts by Silberschatz, Galvin, and Gagne: Fundamental textbook for understanding operating system principles and scheduling algorithms.
+
+- Wikipedia: General information and detailed descriptions of CPU scheduling algorithms
 
 ## Requirements
 
