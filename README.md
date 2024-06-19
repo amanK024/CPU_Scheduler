@@ -1,6 +1,7 @@
 # CPU Scheduler
 
-Project Description
+**Project Description:**
+
 The CPU Scheduling Simulator is an interactive web-based application designed to simulate and compare various CPU scheduling algorithms. It allows users to visualize the execution of processes under different scheduling strategies, including First Come First Served (FCFS), Shortest Job First (SJF), Shortest Remaining Time First (SRTF), and Round Robin (RR). The simulator provides insights into how these algorithms manage process execution and impact system performance metrics such as turnaround time, waiting time, and throughput. This project aims to be an educational tool for understanding the principles and trade-offs of CPU scheduling in operating systems.
 
 ## Features
