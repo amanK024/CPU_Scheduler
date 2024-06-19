@@ -1,0 +1,145 @@
+.buttonAlgo{
+    border-radius: 15px !important; 
+    width: 70px;
+    background-color: #09ae51;
+}
+
+#timeQuantum{
+  width: 80px;
+  background-color: #e1e9ee;
+
+}
+/* Change font color and size */
+body {
+  color: #333; /* Dark gray text color */
+  font-size: 16px; /* Base font size */
+}
+
+/* Position adjustments */
+header {
+  text-align: center; /* Center align header text */
+  margin-bottom: 20px; 
+  color: #5a5f63;
+  /* Increase space below header */
+}
+
+/* Adjust the position and styles of the footer */
+
+
+/* Change form label color */
+label {
+  color: #0e1012; /* Blue color for labels */
+}
+
+/* Adjust the width of the container */
+.container {
+  max-width: 1200px; /* Limit container width */
+  margin: 0 auto; /* Center align container */
+}
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #40aed0;
+  color: #333;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1px;
+  color: #1ead44;
+}
+
+
+
+
+
+/* Form and input styles */
+form {
+  background-color: #1ead44;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(12, 13, 13, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  border: 15px solid rgb(89, 140, 217)
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #6cbaee;
+  border-radius: 4px;
+}
+
+.form-group-time-quantum {
+  display: none;
+}
+
+button {
+  background-color: #090c0f;
+  color: #4bc38f;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #070b0f;
+}
+
+/* Results table */
+.results-table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.results-table th, .results-table td {
+  border: 1px solid #09ae51;
+  padding: 8px;
+  text-align: center;
+}
+
+.results-table th {
+  background-color: #095025;
+}
+
+/* Average results section */
+.average-results {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.average-results label {
+  font-weight: bold;
+  margin-right: 18px;
+}
+
+.average-results input {
+  width: 30%;
+  padding: 18px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  text-align: center;
+}

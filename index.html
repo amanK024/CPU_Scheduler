@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU SCHEDULER</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light" style="background-image: url(cpu_scheduler.jpg);">
+            <span class="navbar-text">
+                <h1 style="color: rgb(233, 236, 240);padding-bottom: 1cm;margin-bottom: 3cm;"><b>CPU SCHEDULER</b></h1>
+                <h2 style="background-color: rgb(101, 159, 101);">The CPU SCHEDULER executes various CPU scheduling algorithms, providing users with insights into process scheduling and performance metrics.</h2>
+            </span>
+            
+            
+        </nav>
+
+    </header>
+ <div>
+    <h2 style="background-color: black; color: rgb(141, 146, 150);"><b>Here are step-by-step instructions for using the CPU scheduler simulation:</b></h2>
+
+          <h3> <li>Input Process Details:</li></h3>
+
+<i><li>Enter Process ID, Arrival Time, and Burst Time for each process in the form provided.
+Select the scheduling algorithm (FCFS, SJF, SRTF, or RR) and specify the Time Quantum for Round Robin if applicable.
+</li>
+
+<li>Click "ADD PROCESS" after filling each process's details to add them to the simulation queue.</li>
+
+<li>Once all processes are added, click "OUTPUT" to run the selected scheduling algorithm.
+</li>
+
+<li>Results including Completion Time, Waiting Time, and Turnaround Time will be displayed dynamically in the table below.
+Average Turnaround Time, Average Waiting Time, and Throughput will be calculated and shown at the bottom.
+</li>
+
+<li>Adjust parameters or add more processes to explore different scenarios.
+</li>
+
+<li>Use browser refresh to clear data and start over if needed.
+Enjoy exploring different CPU scheduling strategies with our CPU SCHEDULER!</li></i>
+ </div>
+
+    <div class="container">
+        
+        <div class="row mb-5 pt-3" id="main">
+            <div class="col-9 process-list-container">
+                <table class="table table-bordered" id="tblProcessList">
+                    <thead style="font-size: xxx-large; background-color: rgb(108, 166, 221); padding-left: 2px;">
+                        <tr>
+                            
+                            <th scope="col">PID</th>
+                            <th scope="col">ARRIVAL_TIME</th>
+                            <th scope="col">BURST_TIME</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control mb-2" type="number" min="0" id="processID" placeholder="PID" required>
+                    </div>
+                    <div class="col">
+                        <input class="form-control mb-2" type="number" min="0" id="arrivalTime" placeholder="Arrival_Time">
+                    </div>
+                    <div class="col">
+                        <input class="form-control mb-2" type="number" min="0" id="burstTime" placeholder="Burst_Time">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" id="btnAddProcess" style="background-color: black;">ADD PROCESS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 border border-primary p-3 mb-2">
+                <div class="form">
+                    <div class="form-group" style="font-size: large;">
+                        <label for="algorithmSelector" style="border: 3px solid black;">SELECT SCHEDULING ALGORITHM</label>
+                        <select class="form-control" id="algorithmSelector" style="background-color:rgb(190, 159, 222);">
+                           <option value="optFCFS">FCFS</option>
+                            <option value="optSJF">SJF</option>
+                            <option value="optSRTF">SRTF</option>
+                            <option value="optRR">RR</option>
+                        
+                    </div>
+                    <div class="form-group form-group-time-quantum" style="color: antiquewhite;">
+                        <label class="mt-1  : rgb(136, 183, 56);">TIME QUANTUM :</label>
+                        <input class="form-control mb-2" type="number" min="0" max="9" id="timeQuantum" placeholder="Quant" >
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="btnCalculate" style="background-color: black;">OUTPUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-primary">
+            <div class="col-md-9">
+                <table class="table table-bordered" id="tblResults">
+                    <thead style="font-size: xx-large; background-color: rgb(84, 101, 230);">
+                        <tr style="height: fit-content;width: 25px;">
+                            <th scope="col">PID</th>
+                            <th scope="col">Arrival  Time</th>
+                            <th scope="col">Burst  Time</th>
+                            <th scope="col">Completion  Time</th>
+                            <th scope="col">Waiting  Time</th>
+                            <th scope="col">Turnaround  Time</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3 border border-primary p-3 mb-2">
+                <div class="form" style="border: 4px solid rgb(11, 90, 181);">
+                    <div class="form-group">
+                        <label for="avgTurnaroundTime">AVERAGE TURNAROUND TIME</label>
+                        <input class="form-control" id="avgTurnaroundTime" type="number" placeholder="0" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="avgTurnaroundTime">AVERAGE WAITING TIME</label>
+                        <input class="form-control" id="avgWaitingTime" type="number" placeholder="0" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="avgTurnaroundTime">THROUGHPUT</label>
+                        <input class="form-control" id="throughput" type="number" placeholder="0" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <footer style="border: 1cm;color: black;">
+    <h3>----Aman Kumar----22115019---</h3>
+   </footer>
+    
+</body>
+</html>
